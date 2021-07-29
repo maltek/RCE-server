@@ -38,6 +38,8 @@ public class SAXBuilderController {
 
             SAXBuilder builder = new SAXBuilder();
             builder.setFeature("http://apache.org/xml/features/disallow-doctype-decl",true);
+            builder.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+            builder.setExpandEntities(false);
 
             Document document = builder.build(new InputSource(new StringReader(xmlString)));
 

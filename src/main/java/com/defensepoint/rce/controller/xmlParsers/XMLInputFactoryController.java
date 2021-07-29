@@ -51,10 +51,10 @@ public class XMLInputFactoryController {
         try {
             XMLInputFactory factory = XMLInputFactory.newInstance();
 
-//            factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-//            factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
-//            factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-//            factory.setProperty("javax.xml.stream.isSupportingExternalEntities", false);
+            //factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+            //factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+            factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+            factory.setProperty("javax.xml.stream.isSupportingExternalEntities", false);
 
             return factory.createXMLStreamReader(new StringReader(xmlString));
 

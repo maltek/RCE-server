@@ -36,6 +36,10 @@ public class XMLReaderController {
             FooReaderHandler handler = new FooReaderHandler();
             XMLReader reader = XMLReaderFactory.createXMLReader();
             reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+            reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+            reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+
             reader.setContentHandler(handler);
             reader.parse(new InputSource(new StringReader(xmlString)));
 

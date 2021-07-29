@@ -46,7 +46,10 @@ public class DocumentBuilderFactoryController {
 
             //Disallow dtd
             factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
             factory.setValidating(true);
+            factory.setXIncludeAware(false);
+            factory.setExpandEntityReferences(false);
 
             //Create DocumentBuilder with default configuration
             builder = factory.newDocumentBuilder();

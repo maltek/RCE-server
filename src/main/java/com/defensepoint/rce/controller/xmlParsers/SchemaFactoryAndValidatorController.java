@@ -80,6 +80,9 @@ public class SchemaFactoryAndValidatorController {
     private DocumentBuilder createDocumentBuilder() throws ParserConfigurationException {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         builderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        builderFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+        builderFactory.setXIncludeAware(false);
+        builderFactory.setExpandEntityReferences(false);
         builderFactory.setNamespaceAware(true);
         return builderFactory.newDocumentBuilder();
     }

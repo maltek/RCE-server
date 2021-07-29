@@ -36,6 +36,9 @@ public class SAXReaderController {
         try {
             SAXReader xmlReader = new SAXReader();
             xmlReader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            xmlReader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+            xmlReader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+
             org.dom4j.Document document = xmlReader.read(new InputSource(new StringReader(xmlString)));
 
             Element root = document.getRootElement();
